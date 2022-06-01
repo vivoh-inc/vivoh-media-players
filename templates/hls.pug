@@ -1,0 +1,50 @@
+html
+  head
+    style.
+      body {
+      background-color: black;
+      color: white;
+      }
+      #video {
+      width: 960px;
+      height: 540px;
+      }
+      .centered {
+      margin: auto;
+      text-align: center;
+      }
+    |
+    |
+    |
+
+  body
+    script
+      | function playMedia() {
+      |   console.log( "Starting playback")
+      |   var hls = new Hls();
+      |
+      |   hls.loadSource(source);
+      |
+      |   hls.attachMedia(video);
+      |   hls.on(Hls.Events.MANIFEST_PARSED, function() {
+      |     console.log( "Manifest parsed");
+      |     video.play().then( function() {
+      |       console.log( "Playback successful");
+      |     })
+      |     .catch( function(err) {
+      |       console.log( "error attempting playback", err );
+      |       video.play()
+      |     })
+      |   });
+      | }
+      |
+      | window.onload = function() {
+      |   var video = document.getElementById('video');
+      |   source = Vivoh.hls.getSource(document.location.search, document.location.pathname)
+      |   playMedia();
+      | }
+    script !{hls_utils_js}
+    script !{hls_js}
+    .centered
+      div
+        video#video(controls='')

@@ -1,0 +1,27 @@
+html
+  style.
+    body {
+    background-color: black;
+    color: white;
+    }
+    #video {
+    width: 960px;
+    height: 540px;
+    }
+    .centered {
+    margin: auto;
+    text-align: center;
+    }
+  body
+    .centered
+      video#video(controls='')
+    |   
+    |   
+    script(src='/player/flv.min.js')
+    |   
+    |   
+    script.
+      var flvPlayer = undefined;
+      document.addEventListener("DOMContentLoaded", (event) => {
+      loadFlvPlayer()
+      })

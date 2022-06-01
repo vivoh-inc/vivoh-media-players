@@ -1,0 +1,20 @@
+{
+  "name": "vivoh-media-players",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "node utils/build.js",
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "expect": "^24.1.0",
+    "hamljs": "^0.6.2",
+    "html2jade": "^0.8.6",
+    "jade": "^1.11.0",
+    "mocha": "^6.0.2",
+    "pug": "^2.0.3",
+    "showdown": "^1.9.0"
+  }
+}
